@@ -38,7 +38,9 @@ $(function($) {
 
 		addNewPassword: function() {
 
-			this.collection.create()
+			var newPassword = this.collection.create()
+
+			newPassword.trigger('focus')
 
 		},
 
@@ -62,16 +64,16 @@ $(function($) {
 			})
 
 			this.collection.on('add', this.addItem)
-			this.collection.on('reset sync', this.resetAllItems)
-			this.collection.on('add remove reset sync', this.updateEmptyClass)
+			this.collection.on('sync', this.resetAllItems)
+			this.collection.on('add remove sync', this.updateEmptyClass)
 
 		},
 
 		unbind: function() {
 
 			this.collection.off('add', this.addItem)
-			this.collection.off('reset sync', this.resetAllItems)
-			this.collection.off('add remove reset sync', this.updateEmptyClass)
+			this.collection.off('sync', this.resetAllItems)
+			this.collection.off('add remove sync', this.updateEmptyClass)
 
 			this.collection.unbind()
 

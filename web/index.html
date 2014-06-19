@@ -108,10 +108,18 @@
 		</div>
 	</script>
 	<script type="text/template" id="template-password-list-item">
-		<td class="password-list-item-field password-list-item-field-title"><%= title %></td>
-		<td class="password-list-item-field password-list-item-field-url"><%= url %></td>
-		<td class="password-list-item-field password-list-item-field-username"><%= username %></td>
-		<td class="password-list-item-field password-list-item-field-password">********</td>
+		<td class="password-list-item-field password-list-item-field-title">
+			<input placeholder="&lt;title&gt;" class="password-list-item-field-input" type="text" name="title" value="<%= title %>">
+		</td>
+		<td class="password-list-item-field password-list-item-field-url">
+			<input placeholder="&lt;URL&gt;" class="password-list-item-field-input" type="text" name="url" value="<%= url %>">
+		</td>
+		<td class="password-list-item-field password-list-item-field-username">
+			<input placeholder="&lt;username&gt;" class="password-list-item-field-input" type="text" name="username" value="<%= username %>">
+		</td>
+		<td class="password-list-item-field password-list-item-field-password">
+			<input placeholder="&lt;password&gt;" class="password-list-item-field-input" type="password" name="password" value="<%= password %>">
+		</td>
 		<td class="password-list-item-field password-list-item-field-toggle">
 			<a class="password-visibility-toggle" title="Toggle password visibility"></a>
 		</td>

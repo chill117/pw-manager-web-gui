@@ -73,18 +73,12 @@ i {
 		/*  Items  */
 		.password-list-item-field {
 			position: relative;
-			color: #333;
-			font-size: .9em;
-			font-weight: 300;
-			text-decoration: none;
-			line-height: 140%;
 			background-color: #efefef;
 			border: none;
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
 			-ms-box-sizing: border-box;
 			box-sizing: border-box;
-			padding: 10px;
 		}
 		.password-list-item:nth-child(odd) .password-list-item-field {
 			background-color: #dfdfdf;
@@ -98,6 +92,84 @@ i {
 		.password-list-item:hover .password-list-item-field {
 			background-color: #FAE4BE;
 		}
+
+			/*  Input  */
+			.password-list-item-field-input {
+				color: #333;
+				font-size: 1.1em;
+				font-weight: 300;
+				font-family: courier;
+				text-decoration: none;
+				text-align: center;
+				line-height: 140%;
+				background: transparent;
+				outline: none;
+				border: none;
+				padding: 10px;
+			}
+			.password-list-item-field-input:focus {
+				outline: none;
+			}
+			.password-list-item-field:first-child .password-list-item-field-input {
+				text-align: left;
+			}
+			.password-list-item-field:last-child .password-list-item-field-input {
+				text-align: right;
+			}
+
+				/*  Place holder text  */
+				.password-list-item-field-input::-webkit-input-placeholder {
+					color: #888;
+					font-size: 0.8em;
+					font-style: italic;
+					text-align: center;
+				}
+				.password-list-item-field-input:-moz-placeholder {/* Firefox 18- */
+					color: #888;
+					font-size: 0.8em;
+					font-style: italic;
+					text-align: center;
+				}
+				.password-list-item-field-input::-moz-placeholder {/* Firefox 19+ */
+					color: #888;
+					font-size: 0.8em;
+					font-style: italic;
+					text-align: center;
+				}
+				.password-list-item-field-input:-ms-input-placeholder {
+					color: #888;
+					font-size: 0.8em;
+					font-style: italic;
+					text-align: center;
+				}
+				.password-list-item-field:first-child .password-list-item-field-input::-webkit-input-placeholder {
+					text-align: left;
+				}
+				.password-list-item-field:first-child .password-list-item-field-input:-moz-placeholder {/* Firefox 18- */
+					text-align: left;
+				}
+				.password-list-item-field:first-child .password-list-item-field-input::-moz-placeholder {/* Firefox 19+ */
+					text-align: left;
+				}
+				.password-list-item-field:first-child .password-list-item-field-input:-ms-input-placeholder {
+					text-align: left;
+				}
+				.password-list-item-field:last-child .password-list-item-field-input::-webkit-input-placeholder {
+					text-align: right;
+				}
+				.password-list-item-field:last-child .password-list-item-field-input:-moz-placeholder {/* Firefox 18- */
+					text-align: right;
+				}
+				.password-list-item-field:last-child .password-list-item-field-input::-moz-placeholder {/* Firefox 19+ */
+					text-align: right;
+				}
+				.password-list-item-field:last-child .password-list-item-field-input:-ms-input-placeholder {
+					text-align: right;
+				}
+				/*  Place holder text  */
+
+			/*  Input  */
+
 		/*  Items  */
 
 
@@ -118,14 +190,15 @@ i {
 
 
 		/*  Password Visibility Toggle  */
+		.password-list-item-field-toggle {
+			width: 40px;
+		}
 		.password-visibility-toggle {
 			position: absolute;
-			left: 50%;
+			left: 0;
 			top: 8px;
 			z-index: 80;
-			text-align: center;
 			cursor: pointer;
-			margin-left: -11px;
 		}
 		.password-visibility-toggle:after {
 			position: relative;
