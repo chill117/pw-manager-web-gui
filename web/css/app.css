@@ -218,6 +218,7 @@ i {
 			-moz-transition: all 0.2s ease-in-out 0;
 			transition: all 0.2s ease-in-out 0;
 		}
+		.password-list-item.password-visible .password-visibility-toggle:after,
 		.password-visibility-toggle:hover:after,
 		.password-visibility-toggle.active:after {
 			color: #666;

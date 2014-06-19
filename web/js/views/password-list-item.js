@@ -11,13 +11,15 @@ $(function($) {
 		template: '#template-password-list-item',
 
 		events: {
+			'keyup input': 'startUpdateOnInputChangeTimer',
+			'click .password-visibility-toggle': 'togglePasswordVisibility'
 		},
 
 		initialize: function(options) {
 
 			this.options = options || {}
 
-			_.bindAll(this, 'close', 'render', 'focus')
+			_.bindAll(this, 'close', 'render', 'focus', 'updateOnInputChange', 'togglePasswordVisibility')
 
 			this.template = _.template($(this.template).html())
 
@@ -25,31 +27,61 @@ $(function($) {
 
 		},
 
+		togglePasswordVisibility: function() {
+
+			if (this.passwordIsVisible())
+				this.hidePassword()
+			else
+				this.showPassword()
+
+		},
+
+		showPassword: function() {
+
+			this.$fields.password.attr('type', 'text')
+			this.$el.addClass('password-visible')
+
+		},
+
+		hidePassword: function() {
+
+			this.$fields.password.attr('type', 'password')
+			this.$el.removeClass('password-visible')
+
+		},
+
+		passwordIsVisible: function() {
+
+			return this.$fields.password.attr('type') == 'text'
+
+		},
+
+		startUpdateOnInputChangeTimer: function(e) {
+
+			clearTimeout(this._updateOnInputChangeTimer)
+
+			this._updateOnInputChangeTimer = setTimeout(_.bind(this.updateOnInputChange, this, e), 100)
+
+		},
+
+		updateOnInputChange: function(e) {
+
+			var inputElm = $(e.target)
+
+			var field = inputElm.attr('name')
+			var value = inputElm.val()
+
+			if (value != this.model.get(field))
+				this.model.set(field, value).save()
+
+		},
+
 		focus: function(field) {
 
 			field || (field = 'title')
 
-			this.makeFieldEditable(field)
+			this.$('input[name="' + field + '"]').focus()
 			
-		},
-
-		unfocus: function() {
-
-			for (var field in this.attributes)
-				this.makeFieldStatic(field)
-
-		},
-
-		makeFieldEditable: function(field) {
-
-			var elm = this.$('password-list-item-field-' + title)
-
-			elm.html()
-
-		},
-
-		makeFieldStatic: function(field) {
-
 		},
 
 		render: function() {
@@ -58,6 +90,11 @@ $(function($) {
 
 			this.$el.html(this.template(data))
 
+			this.$fields = {}
+
+			for (var field in this.model.attributes)
+				this.$fields[field] = this.$(':input[name="' + field + '"]')
+
 			return this
 
 		},
@@ -65,7 +102,6 @@ $(function($) {
 		bind: function() {
 
 			this.model.on('remove', this.close)
-			this.model.on('change', this.render)
 			this.model.on('focus', this.focus)
 
 		},
@@ -73,7 +109,6 @@ $(function($) {
 		unbind: function() {
 
 			this.model.off('remove', this.close)
-			this.model.off('change', this.render)
 			this.model.off('focus', this.focus)
 
 			this._super('unbind')

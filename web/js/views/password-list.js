@@ -15,9 +15,7 @@ $(function($) {
 		ItemView: app.PasswordListItemView,
 
 		events: {
-
-			'click .password-list-action-menu-item.new-password': 'addNewPassword'
-
+			'click .new-password': 'addNewPassword'
 		},
 
 		initialize: function(options) {
@@ -57,15 +55,9 @@ $(function($) {
 
 		bind: function() {
 
-			this.collection.on('all', function(eventName) {
-
-				console.log('PasswordsCollection: ' + eventName)
-
-			})
-
 			this.collection.on('add', this.addItem)
-			this.collection.on('sync', this.resetAllItems)
-			this.collection.on('add remove sync', this.updateEmptyClass)
+			this.collection.once('sync', this.resetAllItems)
+			this.collection.on('add remove', this.updateEmptyClass)
 
 		},
 
@@ -73,7 +65,7 @@ $(function($) {
 
 			this.collection.off('add', this.addItem)
 			this.collection.off('sync', this.resetAllItems)
-			this.collection.off('add remove sync', this.updateEmptyClass)
+			this.collection.off('add remove', this.updateEmptyClass)
 
 			this.collection.unbind()
 
