@@ -1,0 +1,201 @@
+html, body, #app {
+	height: 100%;
+}
+
+html, body {
+	/*
+		Eliminates vertical scrollbar flicker at page load.
+	*/
+	overflow: hidden;
+}
+
+b {
+	font-weight: bold;
+}
+i {
+	font-style: italic;
+}
+
+#app {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 50px;
+}
+
+	/*  Password List  */
+	.password-list {
+		width: 100%;
+	}
+	.password-list-title {
+		display: block;
+		color: #444;
+		font-size: 1.2em;
+		letter-spacing: 1px;
+		background: transparent;
+		margin-bottom: 20px;
+	}
+	.password-list table {
+		width: 100%;
+		border-spacing: 0;
+		border-collapse: collapse;
+	}
+	.password-list.empty table {
+		display: none;
+	}
+
+		/*  Headers  */
+		.password-list-header {
+			color: #f7f7f7;
+			font-size: 1em;
+			font-weight: 700;
+			font-style: italic;
+			line-height: 140%;
+			background: #444;
+			border: none;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-ms-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		.password-list-header:first-child {
+			border-top-left-radius: 15px;
+		}
+		.password-list-header:last-child {
+			border-top-right-radius: 15px;
+		}
+		/*  Headers  */
+
+
+		/*  Items  */
+		.password-list-item-field {
+			position: relative;
+			color: #333;
+			font-size: .9em;
+			font-weight: 300;
+			text-decoration: none;
+			line-height: 140%;
+			background-color: #efefef;
+			border: none;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-ms-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		.password-list-item:nth-child(odd) .password-list-item-field {
+			background-color: #dfdfdf;
+		}
+		.password-list-item:last-child .password-list-item-field:first-child {
+			border-bottom-left-radius: 15px;
+		}
+		.password-list-item:last-child .password-list-item-field:last-child {
+			border-bottom-right-radius: 15px;
+		}
+		.password-list-item:hover .password-list-item-field {
+			background-color: #FAE4BE;
+		}
+		/*  Items  */
+
+
+		/*  Alignments  */
+		.password-list-header,
+		.password-list-item-field {
+			text-align: center;
+		}
+		.password-list-header:first-child,
+		.password-list-item-field:first-child {
+			text-align: left;
+		}
+		.password-list-header:last-child,
+		.password-list-item-field:last-child {
+			text-align: right;
+		}
+		/*  Alignments  */
+
+
+		/*  Password Visibility Toggle  */
+		.password-visibility-toggle {
+			position: absolute;
+			left: 50%;
+			top: 8px;
+			z-index: 80;
+			text-align: center;
+			cursor: pointer;
+			margin-left: -11px;
+		}
+		.password-visibility-toggle:after {
+			position: relative;
+			z-index: 100;
+			color: #aaa;
+			font-family: 'Custom-Icons';
+			font-size: 1.6em;
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			content: "\e600";
+			-webkit-transition: all 0.2s ease-in-out 0;
+			-moz-transition: all 0.2s ease-in-out 0;
+			transition: all 0.2s ease-in-out 0;
+		}
+		.password-visibility-toggle:hover:after,
+		.password-visibility-toggle.active:after {
+			color: #666;
+			font-size: 1.8em;
+		}
+		/*  Password Visibility Toggle  */
+
+
+		/*  Action Menu  */
+		.password-list-action-menu {
+			display: inline-block;
+			vertical-align: top;
+			width: 100%;
+			margin-top: 20px;
+		}
+		.password-list-action-menu-item {
+			float: right;
+			cursor: pointer;
+			font-size: 1.5em;
+			color: #888;
+			-webkit-transition: font-size 0.2s ease-in-out 0, color 0.2s ease-in-out 0;
+			-moz-transition: font-size 0.2s ease-in-out 0, color 0.2s ease-in-out 0;
+			transition: font-size 0.2s ease-in-out 0, color 0.2s ease-in-out 0;
+		}
+		.password-list-action-menu-item:hover {
+			font-size: 2em;
+			color: #444;
+		}
+
+			/*  When list is empty  */
+			.password-list.empty .password-list-action-menu-item {
+				float: left;
+			}
+			/*  When list is empty  */
+
+		/*  Action Menu  */
+
+
+		/*  Empty Message  */
+		.password-list-empty-message {
+			display: none;
+			color: #333;
+			font-size: .9em;
+			font-weight: 300;
+			font-style: italic;
+			text-decoration: none;
+			line-height: 140%;
+		}
+		.password-list.empty .password-list-empty-message {
+			display: block;
+		}
+		/*  Empty Message  */
+
+	/*  Password List  */

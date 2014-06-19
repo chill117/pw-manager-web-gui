@@ -1,0 +1,25 @@
+@font-face {
+	font-family: 'Custom-Icons';
+	src:url('../fonts/Custom-Icons.eot');
+	src:url('../fonts/Custom-Icons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Custom-Icons.woff') format('woff'),
+		url('../fonts/Custom-Icons.ttf') format('truetype'),
+		url('../fonts/Custom-Icons.svg#Custom-Icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon-plus-sign,
+.icon-eye {
+	font-family: 'Custom-Icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+.icon-plus-sign:before { content: "\e601"; }
+.icon-eye:before { content: "\e600"; }
