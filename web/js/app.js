@@ -4,6 +4,8 @@ $(function($) {
 
 	'use strict'
 
+	$('html').removeClass('no-js')
+
 	// App starts here.
 	// No routing necessary.. just initialize the password list view.
 

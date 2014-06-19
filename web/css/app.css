@@ -1,3 +1,10 @@
+#js-disabled-message {
+	color: #111;
+	font-size: 1em;
+	font-style: italic;
+	padding: 20px;
+}
+
 #app {
 	width: 100%;
 	-webkit-box-sizing: border-box;
@@ -187,9 +194,9 @@
 			top: 11px;
 			color: #aaa;
 			font-size: 1.6em;
-			-webkit-transition: all 0.2s ease-in-out 0;
-			-moz-transition: all 0.2s ease-in-out 0;
-			transition: all 0.2s ease-in-out 0;
+			-webkit-transition: font-size 0.2s ease-in-out 0, color 0.2s ease-in-out 0;
+			-moz-transition: font-size 0.2s ease-in-out 0, color 0.2s ease-in-out 0;
+			transition: font-size 0.2s ease-in-out 0, color 0.2s ease-in-out 0;
 			cursor: pointer;
 		}
 		.password-list-item.password-visible .password-list-item-field .password-visibility-toggle,
@@ -208,9 +215,9 @@
 			top: 10px;
 			color: #aaa;
 			font-size: 1.6em;
-			-webkit-transition: all 0.2s ease-in-out 0;
-			-moz-transition: all 0.2s ease-in-out 0;
-			transition: all 0.2s ease-in-out 0;
+			-webkit-transition: font-size 0.2s ease-in-out 0, color 0.2s ease-in-out 0;
+			-moz-transition: font-size 0.2s ease-in-out 0, color 0.2s ease-in-out 0;
+			transition: font-size 0.2s ease-in-out 0, color 0.2s ease-in-out 0;
 			cursor: pointer;
 		}
 		.password-list-item-field .delete-password:hover,
