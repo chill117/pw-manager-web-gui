@@ -9,6 +9,7 @@
 	font-style: normal;
 }
 
+.icon-remove,
 .icon-plus-sign,
 .icon-eye {
 	font-family: 'Custom-Icons';
@@ -21,5 +22,6 @@
 	-webkit-font-smoothing: antialiased;
 }
 
+.icon-remove:before { content: "\e602"; }
 .icon-plus-sign:before { content: "\e601"; }
 .icon-eye:before { content: "\e600"; }

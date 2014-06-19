@@ -1,14 +1,3 @@
-html, body, #app {
-	height: 100%;
-}
-
-html, body {
-	/*
-		Eliminates vertical scrollbar flicker at page load.
-	*/
-	overflow: hidden;
-}
-
 b {
 	font-weight: bold;
 }
@@ -22,7 +11,7 @@ i {
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
-	padding: 50px;
+	padding: 40px;
 }
 
 	/*  Password List  */
@@ -189,42 +178,52 @@ i {
 		/*  Alignments  */
 
 
-		/*  Password Visibility Toggle  */
-		.password-list-item-field-toggle {
-			width: 40px;
+		/*  Icon Field  */
+		.password-list-item-field-icon {
+			width: 48px;
 		}
-		.password-visibility-toggle {
+		/*  Icon Field  */
+
+
+		/*  Password Visibility Toggle  */
+		.password-list-item-field .password-visibility-toggle {
 			position: absolute;
 			left: 0;
-			top: 8px;
-			z-index: 80;
-			cursor: pointer;
-		}
-		.password-visibility-toggle:after {
-			position: relative;
-			z-index: 100;
+			top: 11px;
 			color: #aaa;
-			font-family: 'Custom-Icons';
 			font-size: 1.6em;
-			speak: none;
-			font-style: normal;
-			font-weight: normal;
-			font-variant: normal;
-			text-transform: none;
-			line-height: 1;
-			-webkit-font-smoothing: antialiased;
-			content: "\e600";
 			-webkit-transition: all 0.2s ease-in-out 0;
 			-moz-transition: all 0.2s ease-in-out 0;
 			transition: all 0.2s ease-in-out 0;
+			cursor: pointer;
 		}
-		.password-list-item.password-visible .password-visibility-toggle:after,
-		.password-visibility-toggle:hover:after,
-		.password-visibility-toggle.active:after {
+		.password-list-item.password-visible .password-list-item-field .password-visibility-toggle,
+		.password-list-item-field .password-visibility-toggle:hover,
+		.password-list-item-field .password-visibility-toggle.active {
 			color: #666;
 			font-size: 1.8em;
 		}
 		/*  Password Visibility Toggle  */
+
+
+		/*  Delete Password  */
+		.password-list-item-field .delete-password {
+			position: absolute;
+			left: 0;
+			top: 10px;
+			color: #aaa;
+			font-size: 1.6em;
+			-webkit-transition: all 0.2s ease-in-out 0;
+			-moz-transition: all 0.2s ease-in-out 0;
+			transition: all 0.2s ease-in-out 0;
+			cursor: pointer;
+		}
+		.password-list-item-field .delete-password:hover,
+		.password-list-item-field .delete-password.active {
+			color: #666;
+			font-size: 1.8em;
+		}
+		/*  Delete Password  */
 
 
 		/*  Action Menu  */

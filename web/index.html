@@ -96,6 +96,7 @@
 					<th class="password-list-header">Username</th>
 					<th class="password-list-header">Password</th>
 					<th class="password-list-header"></th>
+					<th class="password-list-header"></th>
 				</tr>
 			</thead>
 			<tbody class="password-list-items"></tbody>
@@ -120,8 +121,11 @@
 		<td class="password-list-item-field password-list-item-field-password">
 			<input placeholder="&lt;password&gt;" class="password-list-item-field-input" type="password" name="password" value="<%= password %>">
 		</td>
-		<td class="password-list-item-field password-list-item-field-toggle">
-			<a class="password-visibility-toggle" title="Toggle password visibility"></a>
+		<td class="password-list-item-field password-list-item-field-icon">
+			<a class="password-visibility-toggle icon-eye" title="Toggle password visibility"></a>
+		</td>
+		<td class="password-list-item-field password-list-item-field-icon">
+			<a class="delete-password icon-remove" title="Delete this password"></a>
 		</td>
 	</script>
 

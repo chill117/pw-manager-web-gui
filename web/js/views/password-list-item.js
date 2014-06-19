@@ -12,18 +12,26 @@ $(function($) {
 
 		events: {
 			'keyup input': 'startUpdateOnInputChangeTimer',
-			'click .password-visibility-toggle': 'togglePasswordVisibility'
+			'click .password-visibility-toggle': 'togglePasswordVisibility',
+			'click .delete-password': 'confirmDelete'
 		},
 
 		initialize: function(options) {
 
 			this.options = options || {}
 
-			_.bindAll(this, 'close', 'render', 'focus', 'updateOnInputChange', 'togglePasswordVisibility')
+			_.bindAll(this, 'close', 'render', 'focus', 'updateOnInputChange', 'togglePasswordVisibility', 'confirmDelete')
 
 			this.template = _.template($(this.template).html())
 
 			this.bind()
+
+		},
+
+		confirmDelete: function() {
+
+			if (confirm('Are you sure you want to delete this password?'))
+				this.model.destroy()
 
 		},
 
