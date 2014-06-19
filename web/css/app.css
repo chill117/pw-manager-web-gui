@@ -21,6 +21,7 @@
 	}
 	.password-list table {
 		width: 100%;
+		max-width: 100%;
 		border-spacing: 0;
 		border-collapse: collapse;
 	}
@@ -88,6 +89,7 @@
 				outline: none;
 				border: none;
 				padding: 10px;
+				margin: 0;
 			}
 			.password-list-item-field-input:focus {
 				outline: none;
@@ -265,3 +267,74 @@
 		/*  Empty Message  */
 
 	/*  Password List  */
+
+	@media all and (max-width: 1024px) {
+
+		#app {
+			padding: 30px;
+		}
+		.password-list-title {
+			font-size: 1em;
+		}
+		.password-list-header {
+			font-size: 1em;
+		}
+		.password-list-item-field-input {
+			font-size: 1em;
+			max-width: 120px;
+		}
+		.password-list-item-field-icon {
+			width: 40px;
+		}
+		.password-list-item-field .delete-password,
+		.password-list-item-field .password-visibility-toggle {
+			font-size: 1.3em;
+		}
+		.password-list-item-field .delete-password:hover,
+		.password-list-item.password-visible .password-list-item-field .password-visibility-toggle,
+		.password-list-item-field .password-visibility-toggle:hover,
+		.password-list-item-field .password-visibility-toggle.active {
+			font-size: 1.5em;
+		}
+		.password-list-item-field .password-visibility-toggle {
+			top: 11px;
+		}
+		.password-list-item-field .delete-password {
+			top: 10px;
+		}
+
+	}
+
+	@media all and (max-width: 768px) {
+
+		#app {
+			padding: 20px;
+		}
+		.password-list-header {
+			font-size: 0.9em;
+		}
+		.password-list-item-field-input {
+			font-size: 0.9em;
+			max-width: 80px;
+		}
+		.password-list-item-field-icon {
+			width: 32px;
+		}
+		.password-list-item-field .delete-password,
+		.password-list-item-field .password-visibility-toggle {
+			font-size: 1.2em;
+		}
+		.password-list-item-field .delete-password:hover,
+		.password-list-item.password-visible .password-list-item-field .password-visibility-toggle,
+		.password-list-item-field .password-visibility-toggle:hover,
+		.password-list-item-field .password-visibility-toggle.active {
+			font-size: 1.4em;
+		}
+		.password-list-item-field .password-visibility-toggle {
+			top: 12px;
+		}
+		.password-list-item-field .delete-password {
+			top: 11px;
+		}
+
+	}
