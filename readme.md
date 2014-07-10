@@ -1,6 +1,6 @@
 # Password Manager Web GUI
 
-A password manager web interface that uses backbone and local storage. See the demo [here]().
+A password manager web interface that uses backbone and local storage. See the demo [here](https://degreesofzero.com/demos/pw-manager-web-gui/).
 
 
 ## !! Warning !!
